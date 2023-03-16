@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Temporizador</title>
+        <link rel="icon" href="src/icon.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <section class="container">
+            <header class="cabecalho">
+                <nav class="wraper-flex">
+                    <div class="logo">
+                        <div class="clock">
+                            <div class="ponteiro"></div>
+                        </div>
+                        <h3 class="nome-logo">DesperTime</h3>
+                    </div><!--logo-->
+                    <div class="menu" id="menu">
+                        <a class="item-menu" href="index.html">Temporizador</a>
+                        <a class="item-menu" href="despertador.html">Despertador</a>
+                        <a class="item-menu" href="cronometro.html">Cronômetro</a>
+                    </div><!--menu-->
+                    <button class="btn-menulateral" alt="icone menu lateral"><i class="fa-solid fa-bars"></i></button>
+                </nav><!--container wraper-flex-->
+            </header><!--cabecalho--><hr>
+            <nav class="menu-lateral">
+                <div class="item-menu-lateral" >
+                    <img class="icone-menu-lateral" src="src/temporizador.png"/>
+                    <a class="link-menu-lateral" href="index.html">Temporizador</a>
+                </div>
+                <div class="item-menu-lateral">
+                    <img class="icone-menu-lateral" src="src/despertador.png"/>
+                    <a class="link-menu-lateral" href="despertador.html">Despertador</a>
+                </div>
+                <div class="item-menu-lateral">
+                    <img class="icone-menu-lateral" src="src/cronometro.png"/>
+                    <a class="link-menu-lateral" href="cronometro.html">Cronômetro</a>
+                </div>
+            </nav>
+
+            <main class="principal">
+                <h3 class="titulo">Temporizador</h3>
+                <div class="wraper-flex">
+                    <div class="campo-Horas">
+                        <h2>Horas</h2>
+                        <select id="horas" name="horas"></select>
+                    </div><!--div-Horas-->
+                    <div class="campo-Minutos">
+                        <h2>Minutos</h2>
+                        <select id="minutos" name="minutos"></select>
+                    </div><!--div-Minutos-->
+                    <div class="campo-Segundos">
+                        <h2>Segundos</h2>
+                        <select id="segundos" name="segundos"></select>
+                    </div><!--div-Segundos-->
+                </div><!--wraper-flex-->
+                <div id="display" class="display">
+                    <h3>Escolha o tempo</h3>
+                </div><!--display-->
+                <div class="btns">
+                    <button id="comecar" class="comecar">Começar</button><!--button-Comecar-->
+                    <button id="pausar" class="pausar">Pausar</button><!--button-Pausar-->
+                    <button id="resetar" class="resetar">Resetar</button><!--button-Resetar--> 
+                </div>              
+            </main><!--principal-->
+    
+            <footer class="rodape">
+                <p class="autor">Desenvolvido por Felipe Albernaz</p>
+                <div class="rodape-link">
+                    <a href="https://github.com/Felipe-Albernaz" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </footer><!--footer-->
+        </section><!--container-->
+
+        <audio id="sound" src="src/alarm.mp3"></audio><!--audio-->
+
+        <script src="script/scriptTemporizador.js"></script><!--script-->
+    </body>
+</html>

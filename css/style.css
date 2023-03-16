@@ -1,0 +1,292 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Orbitron;
+    letter-spacing: 0.04cm;
+}
+
+html{
+    background: linear-gradient(#597579, #464385);
+    height: 100%;
+}
+
+body{
+    background: radial-gradient(#a2a1a104, #00000088);
+    color: #ECECEC;
+    height: 100%;
+}
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cabecalho{
+    width: 100%;
+    padding: 0 6%;
+}
+
+.wraper-flex{
+    display: flex;
+    height: 90px;
+    justify-content: center;
+    align-items: center;
+}
+
+.cabecalho .logo{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: start;
+    gap: 15px;
+}
+
+.clock{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: relative;
+    background: url('../src/bg-relogio.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.ponteiro{
+    content: '';
+    position: absolute;
+    left: 35px; bottom: 35px;
+    width: 1.5px; height: 25px;
+    background-color: black;
+    transform-origin: 0 100%;
+    animation: tick 1s infinite paused;
+}
+
+@keyframes tick{
+    to {transform: rotate(360deg);}
+}
+
+.cabecalho .menu{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu-lateral{
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    height: 90vh;
+    position: absolute;
+    left: -100vw;
+    background: linear-gradient(#516061, #4a4a64);
+    transition: 0.2s;
+    padding: 20px 0 0 0;
+    z-index: 1;
+}
+
+.menu-lateral .item-menu-lateral{
+    display: flex;
+    width: 100%;
+    height: 120px;
+    align-items: center;
+    column-gap: 20px;
+    border-bottom: 1px solid #373745;
+}
+
+.menu-lateral .link-menu-lateral{
+    color: #ECECEC;
+    text-decoration: none;
+}
+
+.menu-lateral .icone-menu-lateral{
+    width: 40px;
+    height: 40px;
+    margin: 20px;
+}
+
+.cabecalho .btn-menulateral{
+    display: none;
+    background-color: #38386000;
+    font-size: 35px;
+    border: none;
+    color: #ECECEC;
+}
+
+.cabecalho .menu .item-menu{
+    font-size: 17px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.cabecalho .menu .item-menu:hover{
+    border-bottom: 2px solid #597579;
+    cursor: pointer;
+}
+
+.principal{
+    margin-top: 100px;
+}
+
+.principal .titulo{
+    margin: 40px;
+}
+
+.principal .campo-Horas, .campo-Minutos, .campo-Segundos{
+    font-size: 13px;
+    width: 20%; 
+}
+
+.principal select{
+    width: 80px;
+    height: 35px;
+    margin-top: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.502);
+    text-align: center;
+}
+
+.principal .display{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    height: 150px;
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 100px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.096);
+}
+
+.principal .display-despertador{
+    flex-direction: column;
+    height: 160px;
+    justify-content: space-around;
+}
+
+.select-cronometro{
+    display: none;
+}
+
+.texto-display{
+    font-size: 15px;
+}
+
+.btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.btns .comecar, .pausar, .continuar, .resetar, .resetar-cronometro, .ativar-alarme, .parar-alarme{
+    width: 110px;
+    height: 45px;
+    font-size: 15px;
+    background-color: #0000004d;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    color: #ECECEC;
+}
+
+.btns-cronometro{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+}
+
+.btns-cronometro .comecar, .continuar{
+    justify-self: end;
+}
+
+.btn-menulateral{
+    cursor: pointer;
+}
+
+.rodape{
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    margin-top: 150px;
+}
+
+.rodape .autor{
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.rodape-link .fa-github{
+    margin: 10px;
+    font-size: 35px;
+    color: #ECECEC;
+}
+
+.rodape-link .fa-github:hover{
+    color: #000000;
+    scale: 1.2;
+    transition: 0.2s;
+}
+
+
+
+
+@media screen and (max-width: 768px){
+
+    html, body{
+        height: 100vh;
+    }
+
+    .cabecalho .logo{
+        width: 80%;
+    }
+
+    .cabecalho .wraper-flex{
+        justify-content: space-between;
+    }
+
+    .cabecalho .menu{
+        display: none;
+    }
+
+    .menu-lateral{
+        width: 80%;
+    }
+
+    .cabecalho .btn-menulateral{
+        display: block;
+        align-self: center;
+    }
+
+    .principal{
+        margin-top: 50px;
+    }
+
+    .principal .wraper-flex{
+        justify-content: space-around;
+    }
+
+    .principal .campo-Horas, .campo-Minutos, .campo-Segundos{
+        width: 30%; 
+    }
+    
+    .menu-ativo{
+        left: 0;
+        opacity: 0.99;
+    }
+
+    .principal select{
+        width: 80px;
+        height: 40px;
+    }
+}
+
+
+
+
