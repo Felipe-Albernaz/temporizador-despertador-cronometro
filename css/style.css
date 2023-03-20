@@ -8,13 +8,11 @@
 
 html{
     background: linear-gradient(#597579, #464385);
-    height: 100%;
 }
 
 body{
     background: radial-gradient(#a2a1a104, #00000088);
     color: #ECECEC;
-    height: 100%;
 }
 
 .container{
