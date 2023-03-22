@@ -3,18 +3,23 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Orbitron;
+}
+
+:root{
+    --cor-fonte:#ECECEC;
+    --bg-fundo: #373745;
+    --bg-btns: #6D67E4;
+}
+
+
+html{
+    height: 100vh;
     letter-spacing: 0.04cm;
 }
 
-html{
-    background: linear-gradient(#597579, #464385);
-    height: 100%;
-}
-
 body{
-    background: radial-gradient(#a2a1a104, #00000088);
-    color: #ECECEC;
-    height: 100%;
+    background-color: var(--bg-fundo);
+    color: var(--cor-fonte);
 }
 
 .container{
@@ -74,6 +79,16 @@ body{
     gap: 20px;
 }
 
+.cabecalho .menu .item-menu {
+    text-decoration: none;
+    color: var(--cor-fonte);
+    font-weight: 600;
+}
+
+.cabecalho .menu .item-menu:hover{
+    border-bottom: 2px solid var(--bg-btns);
+}
+
 .menu-lateral{
     display: flex;
     flex-direction: column;
@@ -81,7 +96,7 @@ body{
     height: 90vh;
     position: absolute;
     left: -100vw;
-    background: linear-gradient(#516061, #4a4a64);
+    background-color: #585861;
     transition: 0.2s;
     padding: 20px 0 0 0;
     z-index: 1;
@@ -93,37 +108,27 @@ body{
     height: 120px;
     align-items: center;
     column-gap: 20px;
-    border-bottom: 1px solid #373745;
+    border-bottom: 1px solid var(--bg-fundo);
 }
 
 .menu-lateral .link-menu-lateral{
-    color: #ECECEC;
+    color: var(--cor-fonte);
     text-decoration: none;
 }
 
 .menu-lateral .icone-menu-lateral{
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     margin: 20px;
+    border-radius: 5px;
 }
 
 .cabecalho .btn-menulateral{
     display: none;
-    background-color: #38386000;
+    background-color: var(--bg-fundo);
     font-size: 35px;
     border: none;
-    color: #ECECEC;
-}
-
-.cabecalho .menu .item-menu{
-    font-size: 17px;
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.cabecalho .menu .item-menu:hover{
-    border-bottom: 2px solid #597579;
-    cursor: pointer;
+    color: var(--bg-btns);
 }
 
 .principal{
@@ -135,7 +140,6 @@ body{
 }
 
 .principal .campo-Horas, .campo-Minutos, .campo-Segundos{
-    font-size: 13px;
     width: 20%; 
 }
 
@@ -143,11 +147,15 @@ body{
     width: 80px;
     height: 35px;
     margin-top: 10px;
-    border: 2px solid black;
     border-radius: 5px;
-    font-size: 14px;
-    background-color: rgba(255, 255, 255, 0.502);
+    background-color: rgba(255, 255, 255, 0.096);
+    border: 1px solid var(--bg-btns);
+    color: var(--cor-fonte);
     text-align: center;
+}
+
+.principal select option{
+    background: #373745;
 }
 
 .principal .display{
@@ -159,6 +167,7 @@ body{
     margin: 0 auto;
     margin-top: 80px;
     margin-bottom: 100px;
+    border: 1px solid var(--bg-btns);
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.096);
 }
@@ -185,14 +194,13 @@ body{
 }
 
 .btns .comecar, .pausar, .continuar, .resetar, .resetar-cronometro, .ativar-alarme, .parar-alarme{
-    width: 110px;
-    height: 45px;
-    font-size: 15px;
-    background-color: #0000004d;
+    width: 100px;
+    height: 40px;
+    background-color: var(--bg-btns);
     border-radius: 10px;
     border: none;
     cursor: pointer;
-    color: #ECECEC;
+    color: var(--cor-fonte);
 }
 
 .btns-cronometro{
@@ -211,25 +219,23 @@ body{
 }
 
 .rodape{
-    width: 100%;
-    color: white;
-    font-weight: bold;
-    margin-top: 150px;
-}
-
-.rodape .autor{
-    margin-top: 30px;
-    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--cor-fonte);
+    margin-top: 100px;
+    gap: 10px;
 }
 
 .rodape-link .fa-github{
     margin: 10px;
-    font-size: 35px;
-    color: #ECECEC;
+    font-size: 40px;
+    color: var(--cor-fonte);
 }
 
 .rodape-link .fa-github:hover{
-    color: #000000;
+    color: var(--bg-btns);
     scale: 1.2;
     transition: 0.2s;
 }
@@ -238,10 +244,6 @@ body{
 
 
 @media screen and (max-width: 768px){
-
-    html, body{
-        height: 100vh;
-    }
 
     .cabecalho .logo{
         width: 80%;
@@ -256,7 +258,7 @@ body{
     }
 
     .menu-lateral{
-        width: 80%;
+        width: 60%;
     }
 
     .cabecalho .btn-menulateral{
@@ -269,22 +271,50 @@ body{
     }
 
     .principal .wraper-flex{
-        justify-content: space-around;
+        justify-content: space-evenly;
+    }
+
+    .menu-ativo{
+        left: 0;
+        opacity: 0.99;
+    }
+}
+
+@media screen and (max-width: 576px){
+
+    html{
+        height: auto;
+    }
+
+    body{
+        font-size: 13px;
+    }
+
+    .container .principal .display{
+        width: 310px;
+    }
+
+    .container .principal .btns{
+        gap: 20px;
+    }
+
+    .menu-lateral{
+        width: 70%;
+    }
+
+    .principal .wraper-flex select{
+        height: 35px;
+    }
+
+    .btns .comecar, .pausar, .continuar, .resetar, .resetar-cronometro, .ativar-alarme, .parar-alarme{
+        width: 90px;
+        height: 35px;
     }
 
     .principal .campo-Horas, .campo-Minutos, .campo-Segundos{
         width: 30%; 
     }
-    
-    .menu-ativo{
-        left: 0;
-        opacity: 0.99;
-    }
 
-    .principal select{
-        width: 80px;
-        height: 40px;
-    }
 }
 
 
