@@ -162,7 +162,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 350px;
+    width: 360px;
     height: 150px;
     margin: 0 auto;
     margin-top: 80px;
@@ -292,6 +292,10 @@ body{
 
     .container .principal .display{
         width: 310px;
+    }
+
+    .display-cronometro{
+        font-size: 28px;
     }
 
     .container .principal .btns{

@@ -34,7 +34,7 @@ function iniciar(s, m, h){
             }
         }
         display.style.fontSize = '30px';
-        display.childNodes[1].innerHTML = `<p>${horaAtualCronometro<10?`0${horaAtualCronometro}`:horaAtualCronometro}h : ${minutoAtualCronometro<10?`0${minutoAtualCronometro}`:minutoAtualCronometro}m : ${segundoAtualCronometro<10?`0${segundoAtualCronometro}`:segundoAtualCronometro}s</p>`;
+        display.childNodes[1].innerHTML = `<p class="display-cronometro">${horaAtualCronometro<10?`0${horaAtualCronometro}`:horaAtualCronometro}h : ${minutoAtualCronometro<10?`0${minutoAtualCronometro}`:minutoAtualCronometro}m : ${segundoAtualCronometro<10?`0${segundoAtualCronometro}`:segundoAtualCronometro}s</p>`;
         segundoParado = segundoAtualCronometro;
         minutoParado = minutoAtualCronometro;
         horaParado = horaAtualCronometro;

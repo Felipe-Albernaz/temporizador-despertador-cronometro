@@ -34,7 +34,7 @@ intervaloHoraAtual = setInterval(()=>{
     formato_horaAtual = horaAtual < 10 ? `0${horaAtual}` : horaAtual;
     formato_minutoAtual = minutoAtual < 10 ? `0${minutoAtual}` : minutoAtual;
     formato_segundoAtual = segundoAtual < 10 ? `0${segundoAtual}` : segundoAtual;
-    display.style.fontSize = '35px';
+    display.style.fontSize = '30px';
     display.childNodes[1].innerHTML = '<font size=5px>Hora atual</font><br>'+formato_horaAtual+' : '+formato_minutoAtual+' : '+formato_segundoAtual+'';
 }, 1000);
 

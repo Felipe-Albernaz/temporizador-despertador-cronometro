@@ -60,7 +60,7 @@ function iniciarContagem(){
                     }
                 }
             }
-            display.style.fontSize = '35px';
+            display.style.fontSize = '30px';
             display.childNodes[1].innerHTML = `<p>${horaAtual<10?`0${horaAtual}`:horaAtual} : ${minutoAtual<10?`0${minutoAtual}`:minutoAtual} : ${segundoAtual<10?`0${segundoAtual}`:segundoAtual}</p>`;
             horaParado = horaAtual;
             minutoParado = minutoAtual;
